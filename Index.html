@@ -1,0 +1,58 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
+
+export default function PortfolioCard() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex justify-center items-center min-h-screen bg-gray-100 p-4"
+    >
+      <Card className="w-full max-w-sm rounded-2xl shadow-lg p-4 bg-white">
+        <CardContent className="text-center space-y-4">
+
+          {/* Profile Image */}
+          <img
+            src="https://via.placeholder.com/120"
+            alt="Profile"
+            className="w-32 h-32 rounded-full mx-auto"
+          />
+
+          {/* Name */}
+          <h1 className="text-2xl font-bold">Your Name</h1>
+
+          {/* Role */}
+          <p className="text-gray-600 text-sm">
+            Frontend Developer | UI/UX Enthusiast
+          </p>
+
+          {/* Contact Info */}
+          <div className="space-y-2 text-sm text-gray-700">
+            <p className="flex items-center justify-center gap-2">
+              <Mail size={16} /> your@email.com
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <Phone size={16} /> +91 00000 00000
+            </p>
+          </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center gap-4 mt-2">
+            <a href="#" className="hover:opacity-80"><Github size={22} /></a>
+            <a href="#" className="hover:opacity-80"><Linkedin size={22} /></a>
+          </div>
+
+          {/* Button */}
+          <Button className="w-full mt-4 rounded-2xl">
+            Download Resume
+          </Button>
+
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+}
